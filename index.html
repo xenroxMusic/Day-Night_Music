@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <title>Redare MP3</title>
+  <meta charset="UTF-8" />
+  <title>Redare MP3 cu fundal imagine</title>
+  <style>
+    /* Imaginea de fundal full screen */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('Day__Night logo background.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* duce playerul jos */
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container audio */
+    .audio-container {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* fundal negru transparent */
+      padding: 10px 0;
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>Redare fișier MP3</h2>
-  <audio controls>
-    <source src="La Luna.wav" type="audio/mpeg">
-    Browserul tău nu suportă redarea audio.
-  </audio>
+  <div class="audio-container">
+    <audio controls>
+      <source src="La Luna.mp3" type="audio/mpeg">
+      Browserul tău nu suportă redarea audio.
+    </audio>
+  </div>
 </body>
 </html>
+
